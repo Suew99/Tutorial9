@@ -56,4 +56,10 @@ crim%>%
    #ylab("Risk factors of the Death")
 ```
 
+<<<<<<< HEAD
 >>>>>>> 046000c7c20de4d66e8d9a601f6067c62449e443
+=======
+
+test test test
+
+>>>>>>> swbranch
