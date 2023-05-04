@@ -6,6 +6,7 @@ output: html_document
 ---
 ```{r}
 library(tidyverse)
+<<<<<<< HEAD
 ```
 
 ```{r}
@@ -26,3 +27,33 @@ offence <- offence %>%
 
 
 
+=======
+crim <- read.csv("Data_Tables_Criminal_Incidents_Visualisation_Year_Ending_December_2019.csv")
+
+```
+
+```{r}
+
+  
+ crim$Incidents.Recorded <-  as.numeric(crim$Incidents.Recorded)
+
+crim <- crim %>%
+  na.omit()%>%
+  group_by(Year)%>%
+  summarise(count = sum(Incidents.Recorded))
+
+#crim$Year <-factor(crim$Year)
+
+  
+crim%>%
+  ggplot(aes(y= count,
+             x = Year, fill = Offence.Division, color=Offence.Division ))+
+  geom_bar(position = "stack", stat="identity")+
+  scale_fill_brewer(palette = "Accent")+
+  theme_minimal()
+  ## ggtitle("Mortality count by risk factor for 2009 and 2019")+
+   #xlab("Number of Death")+
+   #ylab("Risk factors of the Death")
+```
+
+>>>>>>> 046000c7c20de4d66e8d9a601f6067c62449e443
